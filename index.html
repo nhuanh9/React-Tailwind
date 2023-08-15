@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/index.js"></script>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script>
+
+    let main = document.getElementById('root')
+    loadLoginPage()
+
+
+    //Component
+    function loadLoginPage() {
+        main.innerHTML = `
+            <button onclick="loadUserPage()">Login User</button>
+            <button onclick="loadAdminPage()">Login Admin</button>
+        `
+    }
+
+    //Component
+    function loadAdminPage() {
+        main.innerHTML = `
+            <span onclick="loadListProductAdmin()">List Product</span> |
+            <span onclick="loadListCategoryAdmin()">List Category</span> |
+            <span onclick="loadListUserAdmin()">List User</span>
+            <div id="admin"></div>
+        `
+    }
+    function loadListProductAdmin() {
+        document.getElementById('admin').innerHTML = `
+            Manage Products
+        `
+    }
+    function loadListCategoryAdmin() {
+        document.getElementById('admin').innerHTML = `
+            Manage Categories
+        `
+    }
+    function loadListUserAdmin() {
+        document.getElementById('admin').innerHTML = `
+            Manage Users
+        `
+    }
+    function loadUserPage() {
+        main.innerHTML = `
+            <span onclick="loadHome()">Home</span> |
+            <span>Products</span> |
+            <span>About</span>
+            <div id="userPage">
+                Home
+            </div>
+        `
+    }
+    function loadHome() {
+        document.getElementById('userPage').innerHTML = `
+           Home
+        `
+    }
+    function loadListProduct() {
+        document.getElementById('userPage').innerHTML = `
+            Products
+        `
+    }
+    function loadAbout() {
+        document.getElementById('userPage').innerHTML = `
+            About us
+        `
+    }
+</script>
+</body>
+</html>
